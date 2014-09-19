@@ -14,7 +14,6 @@
 @interface CardGameViewController ()
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @end
@@ -58,4 +57,12 @@
     return [UIImage imageNamed:card.isChosen ? @"cardfront" : @"cardback" ];
 }
 
+- (IBAction)resetButton:(UIButton *)sender {
+    CardMatchingGame *newGame;
+    self.game = newGame;
+    [self updateUI];
+}
+- (IBAction)matchMode:(UISegmentedControl *)sender {
+    
+}
 @end
