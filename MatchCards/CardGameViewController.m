@@ -62,7 +62,5 @@
     self.game = newGame;
     [self updateUI];
 }
-- (IBAction)matchMode:(UISegmentedControl *)sender {
-    
-}
+
 @end

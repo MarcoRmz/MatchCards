@@ -30,9 +30,6 @@
                                     <segment title="3 Cards"/>
                                 </segments>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="matchMode:" destination="vXZ-lx-hvc" eventType="valueChanged" id="PaQ-cR-XMs"/>
-                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUk-qu-mFz">
                                 <rect key="frame" x="23" y="62" width="45" height="69"/>
