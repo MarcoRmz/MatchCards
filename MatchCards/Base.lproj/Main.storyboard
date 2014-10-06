@@ -17,19 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Std-N3-Fhr">
-                                <rect key="frame" x="16" y="26" width="83" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FBf-PV-6Y6">
-                                <rect key="frame" x="99" y="20" width="123" height="29"/>
+                                <rect key="frame" x="122" y="20" width="76" height="29"/>
                                 <segments>
-                                    <segment title="2 Cards"/>
-                                    <segment title="3 Cards"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
                                 </segments>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="changeModeSelector:" destination="vXZ-lx-hvc" eventType="valueChanged" id="TxE-VC-dY0"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUk-qu-mFz">
                                 <rect key="frame" x="23" y="62" width="45" height="69"/>
@@ -372,11 +369,19 @@
                                     <action selector="resetButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="B2a-tG-SEa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Std-N3-Fhr">
+                                <rect key="frame" x="16" y="26" width="83" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.054381143115454979" green="0.48644770408163263" blue="0.20161982695686717" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="scoreLabel" destination="Std-N3-Fhr" id="FY1-SO-Vvx"/>
+                        <outlet property="selectedSegmentIndex" destination="FBf-PV-6Y6" id="Hte-jn-D7H"/>
+                        <outlet property="selectedSegmentMode" destination="FBf-PV-6Y6" id="f9C-GF-2S6"/>
                         <outletCollection property="cardButtons" destination="qUk-qu-mFz" id="EdS-zi-UJF"/>
                         <outletCollection property="cardButtons" destination="SdL-iW-rDc" id="7mF-Sx-xvd"/>
                         <outletCollection property="cardButtons" destination="JKQ-AF-8IT" id="Ecd-Np-QWm"/>

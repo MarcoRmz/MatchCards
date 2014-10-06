@@ -15,14 +15,17 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *selectedSegmentMode;
 
 @end
 
 @implementation CardGameViewController
+@synthesize selectedSegmentMode;
 
 - (CardMatchingGame *)game {
     if (!_game) {
         _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+        [self changeModeSelector:self.selectedSegmentMode];
     }
     
     return _game;
@@ -55,6 +58,22 @@
 
 - (UIImage *)backgroundImageForCard:(Card *)card {
     return [UIImage imageNamed:card.isChosen ? @"cardfront" : @"cardback" ];
+}
+
+- (IBAction)changeModeSelector:(UISegmentedControl *)sender {
+    //self.game.maxMatchingCards = [[sender titleForSegmentAtIndex:sender.selectedSegmentIndex] integerValue];
+    if (self.selectedSegmentMode.selectedSegmentIndex == 0) {
+        self.game.maxMatchingCards = 2;
+    } else if (self.selectedSegmentMode.selectedSegmentIndex == 1){
+        self.game.maxMatchingCards = 3;
+    }
+    /*
+    if (self.selectedSegmentMode.selectedSegmentIndex == 0) {
+        self.game.maxMatchingCards = 2;
+    } else {
+        self.game.maxMatchingCards = 3;
+    }
+    */
 }
 
 - (IBAction)resetButton:(UIButton *)sender {
