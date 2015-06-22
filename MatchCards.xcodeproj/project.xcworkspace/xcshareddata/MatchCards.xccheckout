@@ -14,7 +14,7 @@
 		<string>https://github.com/MarcoRmz/MatchCards.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MatchCards.xcodeproj/project.xcworkspace</string>
+	<string>MatchCards.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3C2D47AB4696B0ACB989B6A6BAF15373EAAF1904</key>
